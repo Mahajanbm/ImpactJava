@@ -1,0 +1,88 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 33
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>  create  database ImpactJava;
+Query OK, 1 row affected (0.25 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| 3pm                |
+| bank               |
+| cs                 |
+| dd                 |
+| dddd               |
+| demo               |
+| demo1              |
+| entity             |
+| fueldemo           |
+| impact22           |
+| impactjava         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| proj               |
+| project            |
+| sakila             |
+| stud               |
+| student            |
+| super20            |
+| sys                |
+| world              |
++--------------------+
+22 rows in set (0.28 sec)
+
+mysql> create table tblStudent(sId int ,sName varchar(50),sCity varchar(50),sDept varchar(50));
+ERROR 1046 (3D000): No database selected
+mysql> use impactjava;
+Database changed
+mysql> create table tblStudent(sId int ,sName varchar(50),sCity varchar(50),sDept varchar(50));
+Query OK, 0 rows affected (0.27 sec)
+
+mysql> show tables;
++----------------------+
+| Tables_in_impactjava |
++----------------------+
+| tblstudent           |
++----------------------+
+1 row in set (0.10 sec)
+
+mysql> desc tblStudent;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sId   | int         | YES  |     | NULL    |       |
+| sName | varchar(50) | YES  |     | NULL    |       |
+| sCity | varchar(50) | YES  |     | NULL    |       |
+| sDept | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.07 sec)
+
+mysql> insert into tblStudent values(101,'Abdul','Nanded','MCA');
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into tblStudent (sId,sName,sCity,sDept) values(102,'Abhishek','Solapur','CS');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into tblStudent(sId,sDept,sName,sCity) values(103,'CS','Kalyani','Nashik');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into tblStudent (sName,sDept) values('Vinayak','CS');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblStudent (sId,sName,sCity,sDept) values(105,'Madhav','Latur','CS'),(106,'Tejas','Mumbai','CS');
+Query OK, 2 rows affected (0.11 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> ^A
